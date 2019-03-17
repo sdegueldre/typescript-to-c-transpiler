@@ -160,7 +160,7 @@ class Generator
         node.ret_type,
         node.name,
         node.args.map{|arg| generate(arg)}.join(", "),
-        node.body.map{|expr| generate(expr)}.join(";")
+        node.body.map{|expr| generate(expr)}.join(";\n\t")
       ]
     when ArgNode
       "%s %s" % [
